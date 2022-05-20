@@ -1,4 +1,4 @@
-alias ls='ls --color'
+alias v='nvim'
 export PS1='\u@\h:\[\e[33m\]\w\[\e[0m\]\$ '
 export EDITOR='nvim'
 export TERM=xterm-256color
