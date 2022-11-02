@@ -1,0 +1,22 @@
+[global_config]
+  focus = system
+  geometry_hinting = True
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
+[keybindings]
+  full_screen = <Ctrl><Shift>F11
+[profiles]
+ [[default]]
+    cursor_color = "#FFFFFF"
+    font = Fixed 12
+    foreground_color = "#ffffff"
+    custom_command = 'echo \"foo#bar\"'
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
