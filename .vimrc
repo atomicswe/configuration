@@ -9,6 +9,7 @@ set ruler
 set nu
 set nuw=10
 set laststatus=2
+highlight Comment ctermfg=green
 
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
