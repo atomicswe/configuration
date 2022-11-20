@@ -1,12 +1,25 @@
 [global_config]
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  always_split_with_profile = True
 [keybindings]
 [profiles]
   [[default]]
-    background_color = "#ffffff"
+    background_color = "#04090f"
+    background_darkness = 0.85
+    cursor_color = "#c4e9ff"
+    font = MesloLGS NF 13
+    foreground_color = "#b4e1fd"
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6:#363636:#ff0883:#83ff08:#ff8308:#0883ff:#8308ff:#08ff83:#b6b6b6"
+    use_system_font = False
+  [[default_before]]
+    background_color = "#0f101a"
     background_darkness = 0.85
     cursor_color = "#aaaaaa"
-    font = Monaco 10
-    foreground_color = "#000000"
+    font = MesloLGS NF 13
+    foreground_color = "#ffffff"
+    show_titlebar = False
     scrollback_infinite = True
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000ee:#cd00cd:#00cdcd:#e5e5e5:#7f7f7f:#ff0000:#00ff00:#ffff00:#5c5cff:#ff00ff:#00ffff:#ffffff"
     use_system_font = False
@@ -15,6 +28,7 @@
     [[[window0]]]
       type = Window
       parent = ""
+      size = 900, 600
     [[[child1]]]
       type = Terminal
       parent = window0
