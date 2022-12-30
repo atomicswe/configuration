@@ -1,1 +1,3 @@
-https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html
+https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html - install java
+
+https://bytexd.com/how-to-install-gnome-desktop-in-ubuntu/ - install vanilla gnome
