@@ -28,7 +28,9 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
+	use("projekt0n/github-nvim-theme")
 	use("bluz71/vim-nightfly-guicolors")
+	use({ "rose-pine/neovim", as = "rose-pine" })
 
 	use("christoomey/vim-tmux-navigator")
 
@@ -76,6 +78,7 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+	use("nvim-treesitter/playground")
 
 	use("windwp/nvim-autopairs")
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
