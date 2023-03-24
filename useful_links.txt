@@ -1,3 +1,5 @@
 https://docs.datastax.com/en/jdk-install/doc/jdk-install/installOracleJdkDeb.html - install java
 
 https://askubuntu.com/a/1359780 - install vanilla gnome
+
+https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797 -> .bashrc color config
