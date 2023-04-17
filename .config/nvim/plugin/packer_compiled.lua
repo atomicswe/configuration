@@ -119,9 +119,9 @@ _G.packer_plugins = {
     path = "/home/tomas/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["github-nvim-theme"] = {
+  ["github-theme"] = {
     loaded = true,
-    path = "/home/tomas/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    path = "/home/tomas/.local/share/nvim/site/pack/packer/start/github-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
@@ -205,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tomas/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/tomas/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

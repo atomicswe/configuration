@@ -28,9 +28,10 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	use("projekt0n/github-nvim-theme")
+	use({"projekt0n/github-nvim-theme", as = "github-theme"})
 	use("bluz71/vim-nightfly-guicolors")
 	use({ "rose-pine/neovim", as = "rose-pine" })
+    use('navarasu/onedark.nvim')
 
 	use("christoomey/vim-tmux-navigator")
 

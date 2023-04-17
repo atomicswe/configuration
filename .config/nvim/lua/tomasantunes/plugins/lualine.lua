@@ -26,6 +26,14 @@ lualine_nightfly.command = {
 
 lualine.setup({
    options = {
-        theme = lualine_nightfly
-   } 
+       theme = lualine_nightfly,
+       icons_enable = true
+   },
+   sections = {
+    lualine_a = {
+      {
+        'buffers',
+      }
+    }
+  }
 })
