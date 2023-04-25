@@ -10,6 +10,8 @@ export GOPATH=$HOME/go;
 export PATH=$PATH:$GOPATH/bin;
 export PATH=$PATH:$HOME/.local/bin
 
+alias lg='lazygit'
+
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
