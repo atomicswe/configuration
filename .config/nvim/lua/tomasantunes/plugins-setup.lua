@@ -28,10 +28,7 @@ return packer.startup(function(use)
 
 	use("nvim-lua/plenary.nvim")
 
-	use({"projekt0n/github-nvim-theme", as = "github-theme"})
-	use("bluz71/vim-nightfly-guicolors")
-	use({ "rose-pine/neovim", as = "rose-pine" })
-    use('navarasu/onedark.nvim')
+    use('rebelot/kanagawa.nvim')
 
 	use("christoomey/vim-tmux-navigator")
 
@@ -98,7 +95,7 @@ return packer.startup(function(use)
 		},
 	})
 
-	if packer_boostrap then
+	if packer_bootstrap then
 		require("packer").sync()
 	end
 end)
