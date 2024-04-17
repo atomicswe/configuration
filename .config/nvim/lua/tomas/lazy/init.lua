@@ -4,6 +4,7 @@ return {
         name = "plenary"
     },
 
-    "github/copilot.vim",
+
+    --"github/copilot.vim",
 }
 
