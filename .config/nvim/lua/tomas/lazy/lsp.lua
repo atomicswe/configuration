@@ -32,7 +32,8 @@ return {
                 "jdtls",
                 "pyright",
                 "clangd",
-                "gopls"
+                "gopls",
+                "zls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
