@@ -1,0 +1,4 @@
+export PATH=$PATH:$HOME/.local/scripts
+
+alias v="nvim"
+bindkey -s ^f "tmux-sessionizer\n"
