@@ -76,7 +76,7 @@ return {
                 },
             })
 
-            -- ColorMyPencils("catppuccin")
+            ColorMyPencils("catppuccin")
         end
     },
 
@@ -87,7 +87,7 @@ return {
             vim.g.mellow_transparent = true
             vim.g.mellow_italic_comments = false
 
-            ColorMyPencils("mellow")
+            -- ColorMyPencils("mellow")
         end
     }
 }
