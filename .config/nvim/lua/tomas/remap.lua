@@ -42,4 +42,3 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("n", "<leader><leader>", function() -- source current file
     vim.cmd("so")
 end)
-

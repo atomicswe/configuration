@@ -28,12 +28,12 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "tsserver",
                 "jdtls",
                 "pyright",
                 "clangd",
                 "gopls",
-                "zls"
+                "zls",
+                "marksman"
             },
             handlers = {
                 function(server_name) -- default handler (optional)

@@ -1,4 +1,37 @@
-export PATH=$PATH:$HOME/.local/scripts
+set -ga terminal-overrides ",screen-256color*:Tc"
+set-option -g default-terminal "screen-256color"
 
-alias v="nvim"
-bindkey -s ^f "tmux-sessionizer\n"
+set -g prefix C-a
+unbind C-b
+bind-key C-a send-prefix
+
+set -g status-style 'bg=#333333 fg=#5eacd3'
+set -s escape-time 0
+
+set -g base-index 1
+setw -g pane-base-index 1
+
+unbind %
+bind | split-window -h
+
+unbind '"'
+bind - split-window -v
+
+unbind r
+bind r source-file ~/.tmux.conf
+
+bind -r j resize-pane -D 5
+bind -r k resize-pane -U 5
+bind -r l resize-pane -R 5
+bind -r h resize-pane -L 5
+
+bind -r m resize-pane -Z
+
+set -g mouse on
+
+set-window-option -g mode-keys vi
+
+bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
+bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
+
+unbind -T copy-mode-vi MouseDragEnd1Pane # don't exit copy mode after dragging with mouse
