@@ -33,7 +33,8 @@ return {
                 "clangd",
                 "gopls",
                 "zls",
-                "marksman"
+                "marksman",
+                "denols"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
