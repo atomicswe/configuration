@@ -19,7 +19,7 @@ return {
                 },
             })
 
-            -- ColorMyPencils()
+            ColorMyPencils()
         end
     },
 
@@ -174,7 +174,7 @@ return {
                 },
             })
 
-            ColorMyPencils("monokai-pro")
+            -- ColorMyPencils("monokai-pro")
         end
     }
 }
