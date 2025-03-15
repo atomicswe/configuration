@@ -6,6 +6,7 @@ function ColorMyPencils(color)
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 end
+ColorMyPencils("nova")
 
 return {
     {
@@ -19,7 +20,7 @@ return {
                 },
             })
 
-            ColorMyPencils()
+            -- ColorMyPencils()
         end
     },
 
@@ -176,5 +177,5 @@ return {
 
             -- ColorMyPencils("monokai-pro")
         end
-    }
+    },
 }
