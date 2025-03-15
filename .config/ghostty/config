@@ -3,5 +3,5 @@ font-size = 18
 background = 101010
 cursor-style = block
 cursor-style-blink = true
-background-opacity = 0.9
-background-blur-radius = 20
+# background-opacity = 0.9
+# background-blur-radius = 20
