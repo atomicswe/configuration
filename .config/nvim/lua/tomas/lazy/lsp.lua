@@ -57,20 +57,6 @@ return {
                         }
                     }
                 end,
-
-                ["arduino_language_server"] = function ()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.arduino_language_server.setup {
-                        capabilities = capabilities,
-                        cmd = {
-                            "arduino-language-server",
-                            "-cli", "/opt/homebrew/bin/arduino-cli",
-                            "-clangd", vim.fn.expand("~/.local/share/nvim/mason/bin/"),
-                            "-cli-config", vim.fn.expand("~/Library/Arduino15/arduino-cli.yaml"),
-                            "-fqbn", "arduino:avr:uno"
-                        }
-                    }
-                end,
             }
         })
 
@@ -106,6 +92,17 @@ return {
                 header = "",
                 prefix = "",
             },
+        })
+
+        vim.lsp.config("arduino_language_server", {
+            capabilities = capabilities,
+            cmd = {
+                "arduino-language-server",
+                "-cli", "/opt/homebrew/bin/arduino-cli",
+                "-clangd", "/Users/tomasantunes/.local/share/nvim/mason/bin/clangd",
+                "-cli-config", "/Users/tomasantunes/Library/Arduino15/arduino-cli.yaml",
+                "-fqbn", "esp32:esp32:esp32"
+            }
         })
     end
 }
