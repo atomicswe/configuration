@@ -33,12 +33,10 @@ return {
                 "clangd",
                 "gopls",
                 "zls",
-                "marksman",
-                "arduino_language_server"
+                "marksman"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
@@ -54,20 +52,6 @@ return {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
                                 }
                             }
-                        }
-                    }
-                end,
-
-                ["arduino_language_server"] = function ()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.arduino_language_server.setup {
-                        capabilities = capabilities,
-                        cmd = {
-                            "arduino-language-server",
-                            "-cli", "/opt/homebrew/bin/arduino-cli",
-                            "-clangd", vim.fn.expand("~/.local/share/nvim/mason/bin/"),
-                            "-cli-config", vim.fn.expand("~/Library/Arduino15/arduino-cli.yaml"),
-                            "-fqbn", "arduino:avr:uno"
                         }
                     }
                 end,
