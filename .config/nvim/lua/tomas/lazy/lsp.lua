@@ -55,6 +55,17 @@ return {
                         }
                     }
                 end,
+
+                ["clangd"] = function()
+                    require("lspconfig").clangd.setup({
+                        cmd = {
+                            "clangd",
+                            "--compile-commands-dir=build",
+                            "--query-driver=" ..
+                            vim.fn.expand("~/Library/Arduino15/packages/esp32/tools/esp-x32/2507/bin/xtensa-esp32-elf-*"),
+                        },
+                    })
+                end
             }
         })
 

@@ -11,3 +11,4 @@ My configs.
 - build-essential
 - unzip
 - npm
+- tree-sitter-cli
