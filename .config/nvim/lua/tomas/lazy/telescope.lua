@@ -7,13 +7,19 @@ return {
         require("telescope").setup({
             defaults = {
                 vimgrep_arguments = {
-                    'rg',
-                    '--color=never',
-                    '--no-heading',
-                    '--line-number',
-                    '--column'
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--line-number",
+                    "--column",
+                    "--glob=!zig-pkg/**",
                 },
-                path_display = { "truncate" }
+                path_display = { "truncate" },
+                file_ignore_patterns = {
+                    "node_modules/",
+                    "vendor/",
+                    "zig%-pkg/",
+                },
             },
         })
 
@@ -28,4 +34,3 @@ return {
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
     end
 }
-
