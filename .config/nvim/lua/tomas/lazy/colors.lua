@@ -2,8 +2,10 @@ function ColorMyPencils(color)
     color = color or "rose-pine"
     vim.cmd.colorscheme(color)
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    if color ~= "onedark" then
+        vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+    end
 end
 
 return {
@@ -18,7 +20,7 @@ return {
                 },
             })
 
-            -- ColorMyPencils()
+            ColorMyPencils()
         end
     },
 
@@ -91,21 +93,11 @@ return {
     },
 
     {
-        "atomicswe/atomic-theme",
-        name = "atomic-theme",
-        config = function()
-            require('atomic-theme').setup()
-
-            -- ColorMyPencils("atomic-theme")
-        end
-    },
-
-    {
         "blazkowolf/gruber-darker.nvim",
         name = "gruber-darker",
         config = function()
             require("gruber-darker").setup()
-            ColorMyPencils("gruber-darker")
+            -- ColorMyPencils("gruber-darker")
         end
     },
 
@@ -120,4 +112,16 @@ return {
             -- ColorMyPencils("everforest")
         end
     },
+
+    {
+        "navarasu/onedark.nvim",
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            require('onedark').setup {
+                style = 'deep'
+            }
+            require('onedark').load()
+            -- ColorMyPencils("onedark")
+        end
+    }
 }
