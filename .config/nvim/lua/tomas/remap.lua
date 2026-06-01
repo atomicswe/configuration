@@ -1,14 +1,14 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- directory listing
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)      -- directory listing
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")  -- move line down
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")  -- move line up
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")       -- move line down
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")       -- move line up
 
-vim.keymap.set("n", "J", "mzJ`z")             -- join line below with a space
-vim.keymap.set("n", "<C-u>", "<C-u>zz")       -- go up a lot of lines
-vim.keymap.set("n", "<C-d>", "<C-d>zz")       -- go down a lot of lines
-vim.keymap.set("n", "n", "nzzzv")             -- next in search, centered
-vim.keymap.set("n", "N", "Nzzzv")             -- previous in search, centered
+vim.keymap.set("n", "J", "mzJ`z")                  -- join line below with a space
+vim.keymap.set("n", "<C-u>", "<C-u>zz")            -- go up a lot of lines
+vim.keymap.set("n", "<C-d>", "<C-d>zz")            -- go down a lot of lines
+vim.keymap.set("n", "n", "nzzzv")                  -- next in search, centered
+vim.keymap.set("n", "N", "Nzzzv")                  -- previous in search, centered
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- copy in visual mode
 vim.keymap.set("n", "<leader>Y", [["+Y]])          -- copy in normal move

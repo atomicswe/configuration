@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-    color = color or "rose-pine"
+    color = color or "atomic-theme"
     vim.cmd.colorscheme(color)
 
     if color ~= "onedark" then
@@ -9,6 +9,17 @@ function ColorMyPencils(color)
 end
 
 return {
+    {
+        'atomicswe/atomic-theme',
+        priority = 1000,
+        config = function()
+            require('atomic-theme').setup({
+                -- options
+            })
+            ColorMyPencils()
+        end,
+    },
+
     {
         "rose-pine/neovim",
         name = "rose-pine",
@@ -20,7 +31,7 @@ return {
                 },
             })
 
-            ColorMyPencils()
+            -- ColorMyPencils("rose-pine")
         end
     },
 
@@ -120,8 +131,8 @@ return {
             require('onedark').setup {
                 style = 'deep'
             }
-            require('onedark').load()
+            -- require('onedark').load()
             -- ColorMyPencils("onedark")
         end
-    }
+    },
 }
