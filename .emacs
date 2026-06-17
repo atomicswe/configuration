@@ -91,6 +91,31 @@
 (global-set-key (kbd "C-c m s") 'magit-status)
 (global-set-key (kbd "C-c m l") 'magit-log)
 
+;;; multiple cursors
+(rc/require 'multiple-cursors)
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->")         'mc/mark-next-like-this)
+(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
+(global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
+
+;;; dired
+(require 'dired-x)
+(setq dired-omit-files
+      (concat dired-omit-files "\\|^\\..+$"))
+(setq-default dired-dwim-target t)
+(setq dired-listing-switches "-alh")
+(setq dired-mouse-drag-files t)
+
+;;; word-wrap
+(defun rc/enable-word-wrap ()
+  (interactive)
+  (toggle-word-wrap 1))
+
+(add-hook 'markdown-mode-hook 'rc/enable-word-wrap)
+
 ;;; Move Text
 (rc/require 'move-text)
 (global-set-key (kbd "M-p") 'move-text-up)
@@ -141,3 +166,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(require 'compile)
+
+compilation-error-regexp-alist-alist
+
+(add-to-list 'compilation-error-regexp-alist
+             '("\\([a-zA-Z0-9\\.]+\\)(\\([0-9]+\\)\\(,\\([0-9]+\\)\\)?) \\(Warning:\\)?"
+               1 2 (4) (5)))
+
+(load-file custom-file)
