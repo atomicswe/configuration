@@ -18,3 +18,11 @@
   (rgrep (buffer-substring-no-properties beg end) "*" (pwd)))
 
 (global-set-key (kbd "C-x p s") 'rc/rgrep-selected)
+
+(defun rc/colorize-compilation-buffer ()
+  (read-only-mode 'toggle)
+  (ansi-color-apply-on-region compilation-filter-start (point))
+  (read-only-mode 'toggle))
+(add-hook 'compilation-filter-hook 'rc/colorize-compilation-buffer)
+
+(global-set-key (kbd "C-c c") #'compile)
