@@ -74,6 +74,7 @@
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 (add-hook 'c-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'zig-mode-hook 'rc/set-up-whitespace-handling)
 
 ;;; display-line-numbers-mode
 (when (version<= "26.0.50" emacs-version)
