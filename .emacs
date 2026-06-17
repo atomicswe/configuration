@@ -174,5 +174,3 @@ compilation-error-regexp-alist-alist
 (add-to-list 'compilation-error-regexp-alist
              '("\\([a-zA-Z0-9\\.]+\\)(\\([0-9]+\\)\\(,\\([0-9]+\\)\\)?) \\(Warning:\\)?"
                1 2 (4) (5)))
-
-(load-file custom-file)
