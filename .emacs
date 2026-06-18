@@ -61,6 +61,14 @@
 
 (add-hook 'emacs-lisp-mode-hook  'rc/turn-on-paredit)
 
+;;; Emacs lisp
+(add-hook 'emacs-lisp-mode-hook
+          '(lambda ()
+             (local-set-key (kbd "C-c C-j")
+                            (quote eval-print-last-sexp))))
+(add-to-list 'auto-mode-alist '("Cask" . emacs-lisp-mode))
+
+;;; language modes
 (require 'zig-mode)
 
 (require 'simpc-mode)
@@ -68,12 +76,26 @@
 (add-to-list 'auto-mode-alist '("\\.[b]\\'" . simpc-mode))
 
 ;;; Whitespace mode
+(setq whitespace-style
+      '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark))
+
 (defun rc/set-up-whitespace-handling ()
   (interactive)
   (whitespace-mode 1)
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
+(add-hook 'tuareg-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'c++-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'c-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'simpc-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'emacs-lisp-mode 'rc/set-up-whitespace-handling)
+(add-hook 'java-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'lua-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'rust-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'markdown-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'python-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'go-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'zig-mode-hook 'rc/set-up-whitespace-handling)
 
 ;;; display-line-numbers-mode
