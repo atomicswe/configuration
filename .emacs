@@ -116,6 +116,12 @@
 
 (add-hook 'markdown-mode-hook 'rc/enable-word-wrap)
 
+;;; Company
+(rc/require 'company)
+(require 'company)
+
+(global-company-mode)
+
 ;;; Move Text
 (rc/require 'move-text)
 (global-set-key (kbd "M-p") 'move-text-up)
