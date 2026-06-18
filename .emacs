@@ -99,8 +99,17 @@
 (add-hook 'zig-mode-hook 'rc/set-up-whitespace-handling)
 
 ;;; display-line-numbers-mode
+(setq-default display-line-numbers-type 'relative)
+
 (when (version<= "26.0.50" emacs-version)
-  (global-display-line-numbers-mode))
+  (global-display-line-numbers-mode 1))
+
+(dolist (mode '(term-mode-hook
+                shell-mode-hook
+                eshell-mode-hook
+                ansi-term-mode-hook))
+  (add-hook mode (lambda ()
+                   (display-line-numbers-mode 0))))
 
 ;;; magit
 ;; magit requres this lib, but it is not installed automatically on
