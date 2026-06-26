@@ -158,6 +158,62 @@
 (global-set-key (kbd "M-p") 'move-text-up)
 (global-set-key (kbd "M-n") 'move-text-down)
 
+;;; Evil
+(rc/require 'evil 'evil-leader)
+
+(require 'evil)
+(require 'evil-leader)
+
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-mode 1)
+
+(defun rc/recenter-after (command)
+  `(lambda ()
+     (interactive)
+     (call-interactively ',command)
+     (recenter)))
+
+(defun rc/dired-here ()
+  (interactive)
+  (dired default-directory))
+
+(defun rc/source-current-file ()
+  (interactive)
+  (load-file buffer-file-name))
+
+(evil-leader/set-key
+  "pv" #'rc/dired-here
+  "y"  #'clipboard-kill-ring-save
+  "Y"  #'clipboard-kill-ring-save
+  "d"  #'delete-region
+  "f"  #'indent-region
+  "qo" #'next-error
+  "qc" #'quit-window
+  "lc" #'quit-window
+  "gs" #'magit-status
+  "<SPC>" #'rc/source-current-file)
+
+(evil-define-key 'normal global-map
+  (kbd "C-u") (rc/recenter-after #'evil-scroll-up)
+  (kbd "C-d") (rc/recenter-after #'evil-scroll-down)
+  (kbd "n")   (rc/recenter-after #'evil-search-next)
+  (kbd "N")   (rc/recenter-after #'evil-search-previous)
+  (kbd "Q")   #'ignore
+  (kbd "C-k") (rc/recenter-after #'previous-error)
+  (kbd "C-j") (rc/recenter-after #'next-error)
+  (kbd "J") #'move-text-down
+  (kbd "K") #'move-text-up)
+
+(evil-define-key 'insert global-map
+  (kbd "C-c") #'evil-normal-state)
+
+(evil-define-key 'visual global-map
+  (kbd ">") #'evil-shift-right
+  (kbd "<") #'evil-shift-left
+  (kbd "J") #'move-text-down
+  (kbd "K") #'move-text-up)
+
 ;;; Packages that don't require configuration
 (rc/require
  'scala-mode
