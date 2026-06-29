@@ -97,6 +97,7 @@
 (add-hook 'go-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
 (add-hook 'zig-mode-hook 'rc/set-up-whitespace-handling)
+(add-hook 'swift-mode-hook 'rc/set-up-whitespace-handling)
 
 ;;; display-line-numbers-mode
 (setq-default display-line-numbers-type 'relative)
@@ -201,9 +202,7 @@
   (kbd "N")   (rc/recenter-after #'evil-search-previous)
   (kbd "Q")   #'ignore
   (kbd "C-k") (rc/recenter-after #'previous-error)
-  (kbd "C-j") (rc/recenter-after #'next-error)
-  (kbd "J") #'move-text-down
-  (kbd "K") #'move-text-up)
+  (kbd "C-j") (rc/recenter-after #'next-error))
 
 (evil-define-key 'insert global-map
   (kbd "C-c") #'evil-normal-state)
@@ -246,6 +245,7 @@
  'typescript-mode
  'rfc-mode
  'sml-mode
+ 'swift-mode
  )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
